@@ -75,8 +75,26 @@ namespace Printing3dApp
 
                 if (isValid)
                 {
+                    //declare an instance of the project table created
+                    var projectrecord = new ProjectRecord();
+
+                    //mapping the table to the input field for each row
+                    projectrecord.ProjectTitle = projectTitle;
+                    projectrecord.OwnerName = ownerName;
+                    projectrecord.DateCreated = dateCreated;
+                    projectrecord.BuildHeight = (decimal?)buildHeight;
+                    projectrecord.Material = (int)cbMaterial.SelectedValue;
+                    projectrecord.Process = (int)cbProcess.SelectedValue;
+                    projectrecord.Status = (int)cbStatus.SelectedValue;
+                    projectrecord.Comments = comments;
+
+                    //save input in the database
+                    _db.ProjectRecords.Add(projectrecord);
+                    _db.SaveChanges();
+
+
                     MessageBox.Show($"Project: {projectTitle}\n\r" +
-                    $"created by {ownerName}" +
+                    $"created by {ownerName}\n\r" +
                     $"is successful on {dateCreated}");
 
                 }
