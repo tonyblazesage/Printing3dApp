@@ -18,7 +18,7 @@ namespace Printing3dApp
             {
                 string projectTitle = tbProjectTitle.Text;
                 string ownerName = tbOwnerName.Text;
-                string buildHeight = tbBuildHeight.Text;
+                var buildHeight = Convert.ToDouble(tbBuildHeight.Text);
                 var dateCreated = dtpDateCreated.Value;
                 var material = cbMaterial.Text;
                 var process = cbProcess.Text;
@@ -48,13 +48,29 @@ namespace Printing3dApp
                     isValid = false;
                     MessageBox.Show("Please select a Material value!");
                 }
+                if (buildHeight == double.NaN || buildHeight <= 0.00)
+                {
+                    isValid = false;
+                    MessageBox.Show("This field is required and must be greated than 0.00");
+
+                }
+                if (string.IsNullOrWhiteSpace(comments))
+                {
+                    isValid = false;
+                    MessageBox.Show("This field is required");
+                }
+                if (comments.Length > 100)
+                {
+                    isValid = false;
+                    MessageBox.Show("Must be 100 characters or less");
+                }
 
 
-                if (isValid)
+                if (isValid
                 {
                     MessageBox.Show($"Project: {projectTitle}\n\r" +
-                    $"created by: {ownerName} " +
-                    $" is successful on {dateCreated}");
+                    $"created by {ownerName}" +
+                    $"is successful on {dateCreated}");
 
                 }
 
