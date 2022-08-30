@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -6,9 +7,14 @@ namespace Printing3dApp
 {
     public partial class Form1 : Form
     {
+        //establish the instance for the connection to the database
+        private readonly Waam3dPrintingEntities _db;
         public Form1()
         {
             InitializeComponent();
+
+            //initialise an instance of the connection
+            _db = new Waam3dPrintingEntities();
         }
 
         private void btnSubmit_Click(object sender, System.EventArgs e)
@@ -22,6 +28,7 @@ namespace Printing3dApp
                 var dateCreated = dtpDateCreated.Value;
                 var material = cbMaterial.Text;
                 var process = cbProcess.Text;
+                var status = cbStatus.Text;
                 string comments = rtbComments.Text;
                 var isValid = true;
 
@@ -46,7 +53,7 @@ namespace Printing3dApp
                 if (process == null)
                 {
                     isValid = false;
-                    MessageBox.Show("Please select a Material value!");
+                    MessageBox.Show("Please select a Process value!");
                 }
                 if (buildHeight == double.NaN || buildHeight <= 0.00)
                 {
@@ -66,7 +73,7 @@ namespace Printing3dApp
                 }
 
 
-                if (isValid
+                if (isValid)
                 {
                     MessageBox.Show($"Project: {projectTitle}\n\r" +
                     $"created by {ownerName}" +
@@ -83,6 +90,27 @@ namespace Printing3dApp
             }
 
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //select * from MaterialTypes
+            var materials = _db.MaterialTypes.ToList();
+            cbMaterial.DisplayMember = "Type";
+            cbMaterial.ValueMember = "id";
+            cbMaterial.DataSource = materials;
+
+            //select * from StatusStates
+            var states = _db.StatusStates.ToList();
+            cbStatus.DisplayMember = "State";
+            cbStatus.ValueMember = "id";
+            cbStatus.DataSource = states;
+
+            //select * from ProcessTypes
+            var processes = _db.ProcessTypes.ToList();
+            cbProcess.DisplayMember = "Type";
+            cbProcess.ValueMember = "id";
+            cbProcess.DataSource = processes;
         }
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f581cd083cb43628196b9cfbd44f8be" Name="Diagram1">
+        <EntityTypeShape EntityType="Waam3dPrintingModel.MaterialType" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Waam3dPrintingModel.ProcessType" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Waam3dPrintingModel.ProjectRecord" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Waam3dPrintingModel.StatusState" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="Waam3dPrintingModel.FK_ProjectRecord_MaterialTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Waam3dPrintingModel.FK_ProjectRecord_ProcessTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Waam3dPrintingModel.FK_ProjectRecord_StatusState" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

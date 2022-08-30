@@ -47,7 +47,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -156,10 +156,6 @@
             // 
             this.cbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaterial.FormattingEnabled = true;
-            this.cbMaterial.Items.AddRange(new object[] {
-            "Aluminium, Grade 2024, Thickness 1.6mm",
-            "Titanium, Grade 5055, Thickness 2mm",
-            "Steel, Grade ER 60, Thickness 4mm"});
             this.cbMaterial.Location = new System.Drawing.Point(12, 282);
             this.cbMaterial.Name = "cbMaterial";
             this.cbMaterial.Size = new System.Drawing.Size(205, 21);
@@ -169,9 +165,6 @@
             // 
             this.cbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProcess.FormattingEnabled = true;
-            this.cbProcess.Items.AddRange(new object[] {
-            "Plasma",
-            "MIG"});
             this.cbProcess.Location = new System.Drawing.Point(436, 282);
             this.cbProcess.Name = "cbProcess";
             this.cbProcess.Size = new System.Drawing.Size(205, 21);
@@ -229,17 +222,14 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // comboBox1
+            // cbStatus
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Active",
-            "Closed"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 353);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(107, 21);
-            this.comboBox1.TabIndex = 20;
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Location = new System.Drawing.Point(12, 353);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(107, 21);
+            this.cbStatus.TabIndex = 20;
             // 
             // label9
             // 
@@ -257,7 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(666, 662);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
@@ -278,6 +268,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,7 +294,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Label label9;
     }
 }
