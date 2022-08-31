@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace Printing3dApp
 {
-    public partial class Form1 : Form
+    public partial class AddProject : Form
     {
         //establish the instance for the connection to the database
         private readonly Waam3dPrintingEntities _db;
-        public Form1()
+        public AddProject()
         {
             InitializeComponent();
 
@@ -76,17 +76,18 @@ namespace Printing3dApp
                 if (isValid)
                 {
                     //declare an instance of the project table created
-                    var projectrecord = new ProjectRecord();
-
-                    //mapping the table to the input field for each row
-                    projectrecord.ProjectTitle = projectTitle;
-                    projectrecord.OwnerName = ownerName;
-                    projectrecord.DateCreated = dateCreated;
-                    projectrecord.BuildHeight = (decimal?)buildHeight;
-                    projectrecord.Material = (int)cbMaterial.SelectedValue;
-                    projectrecord.Process = (int)cbProcess.SelectedValue;
-                    projectrecord.Status = (int)cbStatus.SelectedValue;
-                    projectrecord.Comments = comments;
+                    var projectrecord = new ProjectRecord
+                    {
+                        //mapping the table to the input field for each row
+                        ProjectTitle = projectTitle,
+                        OwnerName = ownerName,
+                        DateCreated = dateCreated,
+                        BuildHeight = (decimal?)buildHeight,
+                        Material = (int)cbMaterial.SelectedValue,
+                        Process = (int)cbProcess.SelectedValue,
+                        Status = (int)cbStatus.SelectedValue,
+                        Comments = comments
+                    };
 
                     //save input in the database
                     _db.ProjectRecords.Add(projectrecord);
@@ -130,5 +131,7 @@ namespace Printing3dApp
             cbProcess.ValueMember = "id";
             cbProcess.DataSource = processes;
         }
+
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Printing3dApp
 {
-    partial class Form1
+    partial class AddProject
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 9);
+            this.label1.Location = new System.Drawing.Point(113, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 46);
             this.label1.TabIndex = 0;
@@ -82,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(433, 90);
+            this.label3.Location = new System.Drawing.Point(304, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             // tbOwnerName
             // 
-            this.tbOwnerName.Location = new System.Drawing.Point(433, 113);
+            this.tbOwnerName.Location = new System.Drawing.Point(304, 113);
             this.tbOwnerName.Name = "tbOwnerName";
             this.tbOwnerName.Size = new System.Drawing.Size(205, 20);
             this.tbOwnerName.TabIndex = 3;
@@ -116,7 +116,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(433, 169);
+            this.label5.Location = new System.Drawing.Point(304, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 17);
             this.label5.TabIndex = 8;
@@ -125,12 +125,12 @@
             // dtpDateCreated
             // 
             this.dtpDateCreated.Enabled = false;
-            this.dtpDateCreated.Location = new System.Drawing.Point(433, 189);
-            this.dtpDateCreated.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.dtpDateCreated.Location = new System.Drawing.Point(304, 189);
+            this.dtpDateCreated.MinDate = new System.DateTime(2022, 8, 31, 13, 0, 26, 0);
             this.dtpDateCreated.Name = "dtpDateCreated";
             this.dtpDateCreated.Size = new System.Drawing.Size(205, 20);
             this.dtpDateCreated.TabIndex = 9;
-            this.dtpDateCreated.Value = new System.DateTime(2022, 8, 30, 14, 53, 58, 0);
+            this.dtpDateCreated.Value = new System.DateTime(2022, 8, 31, 13, 0, 26, 0);
             // 
             // label6
             // 
@@ -146,7 +146,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(433, 249);
+            this.label7.Location = new System.Drawing.Point(304, 249);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 11;
@@ -165,7 +165,7 @@
             // 
             this.cbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProcess.FormattingEnabled = true;
-            this.cbProcess.Location = new System.Drawing.Point(436, 282);
+            this.cbProcess.Location = new System.Drawing.Point(307, 282);
             this.cbProcess.Name = "cbProcess";
             this.cbProcess.Size = new System.Drawing.Size(205, 21);
             this.cbProcess.TabIndex = 13;
@@ -182,9 +182,9 @@
             // 
             // rtbComments
             // 
-            this.rtbComments.Location = new System.Drawing.Point(12, 454);
+            this.rtbComments.Location = new System.Drawing.Point(12, 442);
             this.rtbComments.Name = "rtbComments";
-            this.rtbComments.Size = new System.Drawing.Size(626, 137);
+            this.rtbComments.Size = new System.Drawing.Size(500, 137);
             this.rtbComments.TabIndex = 15;
             this.rtbComments.Text = "";
             // 
@@ -195,7 +195,7 @@
             this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSubmit.Location = new System.Drawing.Point(543, 610);
+            this.btnSubmit.Location = new System.Drawing.Point(417, 610);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(95, 40);
             this.btnSubmit.TabIndex = 16;
@@ -210,7 +210,7 @@
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(433, 610);
+            this.btnCancel.Location = new System.Drawing.Point(304, 610);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 40);
             this.btnCancel.TabIndex = 17;
@@ -241,12 +241,12 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Status";
             // 
-            // Form1
+            // AddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(666, 662);
+            this.ClientSize = new System.Drawing.Size(527, 662);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancel);
@@ -266,8 +266,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbProjectTitle);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "AddProject";
+            this.Text = "Add new Project";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
