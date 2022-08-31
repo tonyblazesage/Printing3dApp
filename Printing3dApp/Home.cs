@@ -9,16 +9,11 @@ namespace Printing3dApp
             InitializeComponent();
         }
 
-        private void addNewProjectToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            var addProject = new AddProject();
-            addProject.MdiParent = this;
-            addProject.Show();
-        }
-
         private void projectToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-
+            var manageprojects = new ManageProjects();
+            manageprojects.MdiParent = this;
+            manageprojects.Show();
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Printing3dApp
         public Nullable<int> Material { get; set; }
         public Nullable<int> Process { get; set; }
         public Nullable<int> Status { get; set; }
+        public Nullable<System.DateTime> DateModified { get; set; }
     
         public virtual MaterialType MaterialType { get; set; }
         public virtual ProcessType ProcessType { get; set; }

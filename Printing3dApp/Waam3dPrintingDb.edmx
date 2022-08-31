@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Waam3dPrintingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Waam3dPrintingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="MaterialTypes">
           <Key>
             <PropertyRef Name="id" />
@@ -32,6 +32,7 @@
           <Property Name="Material" Type="int" />
           <Property Name="Process" Type="int" />
           <Property Name="Status" Type="int" />
+          <Property Name="DateModified" Type="datetime" />
         </EntityType>
         <EntityType Name="StatusState">
           <Key>
@@ -94,18 +95,35 @@
             <End Role="ProjectRecord" EntitySet="ProjectRecord" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Waam3dPrintingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Waam3dPrintingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MaterialTypes" EntityType="Waam3dPrintingModel.MaterialType" />
+          <EntitySet Name="ProcessTypes" EntityType="Waam3dPrintingModel.ProcessType" />
+          <EntitySet Name="ProjectRecords" EntityType="Waam3dPrintingModel.ProjectRecord" />
+          <EntitySet Name="StatusStates" EntityType="Waam3dPrintingModel.StatusState" />
+          <AssociationSet Name="FK_ProjectRecord_MaterialTypes" Association="Waam3dPrintingModel.FK_ProjectRecord_MaterialTypes">
+            <End Role="MaterialType" EntitySet="MaterialTypes" />
+            <End Role="ProjectRecord" EntitySet="ProjectRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectRecord_ProcessTypes" Association="Waam3dPrintingModel.FK_ProjectRecord_ProcessTypes">
+            <End Role="ProcessType" EntitySet="ProcessTypes" />
+            <End Role="ProjectRecord" EntitySet="ProjectRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectRecord_StatusState" Association="Waam3dPrintingModel.FK_ProjectRecord_StatusState">
+            <End Role="StatusState" EntitySet="StatusStates" />
+            <End Role="ProjectRecord" EntitySet="ProjectRecords" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="MaterialType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="ProjectRecords" Relationship="Self.FK_ProjectRecord_MaterialTypes" FromRole="MaterialTypes" ToRole="ProjectRecord" />
+          <NavigationProperty Name="ProjectRecords" Relationship="Waam3dPrintingModel.FK_ProjectRecord_MaterialTypes" FromRole="MaterialType" ToRole="ProjectRecord" />
         </EntityType>
         <EntityType Name="ProcessType">
           <Key>
@@ -113,7 +131,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="ProjectRecords" Relationship="Self.FK_ProjectRecord_ProcessTypes" FromRole="ProcessTypes" ToRole="ProjectRecord" />
+          <NavigationProperty Name="ProjectRecords" Relationship="Waam3dPrintingModel.FK_ProjectRecord_ProcessTypes" FromRole="ProcessType" ToRole="ProjectRecord" />
         </EntityType>
         <EntityType Name="ProjectRecord">
           <Key>
@@ -128,9 +146,10 @@
           <Property Name="Material" Type="Int32" />
           <Property Name="Process" Type="Int32" />
           <Property Name="Status" Type="Int32" />
-          <NavigationProperty Name="MaterialType" Relationship="Self.FK_ProjectRecord_MaterialTypes" FromRole="ProjectRecord" ToRole="MaterialTypes" />
-          <NavigationProperty Name="ProcessType" Relationship="Self.FK_ProjectRecord_ProcessTypes" FromRole="ProjectRecord" ToRole="ProcessTypes" />
-          <NavigationProperty Name="StatusState" Relationship="Self.FK_ProjectRecord_StatusState" FromRole="ProjectRecord" ToRole="StatusState" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MaterialType" Relationship="Waam3dPrintingModel.FK_ProjectRecord_MaterialTypes" FromRole="ProjectRecord" ToRole="MaterialType" />
+          <NavigationProperty Name="ProcessType" Relationship="Waam3dPrintingModel.FK_ProjectRecord_ProcessTypes" FromRole="ProjectRecord" ToRole="ProcessType" />
+          <NavigationProperty Name="StatusState" Relationship="Waam3dPrintingModel.FK_ProjectRecord_StatusState" FromRole="ProjectRecord" ToRole="StatusState" />
         </EntityType>
         <EntityType Name="StatusState">
           <Key>
@@ -138,13 +157,13 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="State" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="ProjectRecords" Relationship="Self.FK_ProjectRecord_StatusState" FromRole="StatusState" ToRole="ProjectRecord" />
+          <NavigationProperty Name="ProjectRecords" Relationship="Waam3dPrintingModel.FK_ProjectRecord_StatusState" FromRole="StatusState" ToRole="ProjectRecord" />
         </EntityType>
         <Association Name="FK_ProjectRecord_MaterialTypes">
-          <End Role="MaterialTypes" Type="Self.MaterialType" Multiplicity="0..1" />
-          <End Role="ProjectRecord" Type="Self.ProjectRecord" Multiplicity="*" />
+          <End Type="Waam3dPrintingModel.MaterialType" Role="MaterialType" Multiplicity="0..1" />
+          <End Type="Waam3dPrintingModel.ProjectRecord" Role="ProjectRecord" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MaterialTypes">
+            <Principal Role="MaterialType">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProjectRecord">
@@ -153,10 +172,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProjectRecord_ProcessTypes">
-          <End Role="ProcessTypes" Type="Self.ProcessType" Multiplicity="0..1" />
-          <End Role="ProjectRecord" Type="Self.ProjectRecord" Multiplicity="*" />
+          <End Type="Waam3dPrintingModel.ProcessType" Role="ProcessType" Multiplicity="0..1" />
+          <End Type="Waam3dPrintingModel.ProjectRecord" Role="ProjectRecord" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ProcessTypes">
+            <Principal Role="ProcessType">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProjectRecord">
@@ -165,8 +184,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProjectRecord_StatusState">
-          <End Role="StatusState" Type="Self.StatusState" Multiplicity="0..1" />
-          <End Role="ProjectRecord" Type="Self.ProjectRecord" Multiplicity="*" />
+          <End Type="Waam3dPrintingModel.StatusState" Role="StatusState" Multiplicity="0..1" />
+          <End Type="Waam3dPrintingModel.ProjectRecord" Role="ProjectRecord" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusState">
               <PropertyRef Name="id" />
@@ -176,24 +195,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Waam3dPrintingEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="MaterialTypes" EntityType="Self.MaterialType" />
-          <EntitySet Name="ProcessTypes" EntityType="Self.ProcessType" />
-          <EntitySet Name="ProjectRecords" EntityType="Self.ProjectRecord" />
-          <EntitySet Name="StatusStates" EntityType="Self.StatusState" />
-          <AssociationSet Name="FK_ProjectRecord_MaterialTypes" Association="Self.FK_ProjectRecord_MaterialTypes">
-            <End Role="MaterialTypes" EntitySet="MaterialTypes" />
-            <End Role="ProjectRecord" EntitySet="ProjectRecords" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProjectRecord_ProcessTypes" Association="Self.FK_ProjectRecord_ProcessTypes">
-            <End Role="ProcessTypes" EntitySet="ProcessTypes" />
-            <End Role="ProjectRecord" EntitySet="ProjectRecords" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProjectRecord_StatusState" Association="Self.FK_ProjectRecord_StatusState">
-            <End Role="StatusState" EntitySet="StatusStates" />
-            <End Role="ProjectRecord" EntitySet="ProjectRecords" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -203,39 +204,40 @@
           <EntitySetMapping Name="MaterialTypes">
             <EntityTypeMapping TypeName="Waam3dPrintingModel.MaterialType">
               <MappingFragment StoreEntitySet="MaterialTypes">
-                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProcessTypes">
             <EntityTypeMapping TypeName="Waam3dPrintingModel.ProcessType">
               <MappingFragment StoreEntitySet="ProcessTypes">
-                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProjectRecords">
             <EntityTypeMapping TypeName="Waam3dPrintingModel.ProjectRecord">
               <MappingFragment StoreEntitySet="ProjectRecord">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
-                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
-                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-                <ScalarProperty Name="BuildHeight" ColumnName="BuildHeight" />
-                <ScalarProperty Name="Comments" ColumnName="Comments" />
-                <ScalarProperty Name="Material" ColumnName="Material" />
-                <ScalarProperty Name="Process" ColumnName="Process" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Process" ColumnName="Process" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="BuildHeight" ColumnName="BuildHeight" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StatusStates">
             <EntityTypeMapping TypeName="Waam3dPrintingModel.StatusState">
               <MappingFragment StoreEntitySet="StatusState">
-                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

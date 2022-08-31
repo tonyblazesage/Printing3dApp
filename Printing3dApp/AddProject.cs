@@ -113,6 +113,13 @@ namespace Printing3dApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //creating and setting the properties of datetimepicker
+
+            DateTimePicker dtp = new DateTimePicker();
+            dtp.Value = DateTime.Now;
+
+            this.Controls.Add(dtp);
+
             //select * from MaterialTypes
             var materials = _db.MaterialTypes.ToList();
             cbMaterial.DisplayMember = "Type";
@@ -132,6 +139,9 @@ namespace Printing3dApp
             cbProcess.DataSource = processes;
         }
 
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
