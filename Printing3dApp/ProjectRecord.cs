@@ -18,7 +18,7 @@ namespace Printing3dApp
         public string ProjectTitle { get; set; }
         public string OwnerName { get; set; }
         public Nullable<System.DateTime> DateCreated { get; set; }
-        public Nullable<decimal> BuildHeight { get; set; }
+        public Nullable<double> BuildHeight { get; set; }
         public string Comments { get; set; }
         public Nullable<int> Material { get; set; }
         public Nullable<int> Process { get; set; }

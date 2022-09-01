@@ -22,7 +22,7 @@ namespace Printing3dApp
                 Select(s => new
                 {
                     s.id,
-                    ProjectTitle = s.ProjectTitle,
+                    s.ProjectTitle,
                     DateOfCreation = s.DateCreated,
                     s.Status
                 })
@@ -42,55 +42,104 @@ namespace Printing3dApp
 
         private void btnAddProject_Click(object sender, EventArgs e)
         {
-            var addProject = new AddProject();
-            addProject.MdiParent = this.MdiParent;
+            var addProject = new AddProject
+            {
+                MdiParent = this.MdiParent
+            };
             addProject.Show();
 
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            //get id and status of the row.
-            var ID = (int)dgvManageProjects.SelectedRows[0].Cells["id"].Value;
-            var status = (int)dgvManageProjects.SelectedRows[0].Cells["Status"].Value;
-
-
-            //then we need to query the database
-            var record = _db.ProjectRecords.FirstOrDefault(r => r.Status == status && r.id == ID);
-
-
-
-            //launch the form (closed or Active form) according to status code
-            if (record.Status == 1)
+            try
             {
-                var viewopenproject = new ViewOpenProject(record);
-                viewopenproject.MdiParent = this.MdiParent;
-                viewopenproject.Show();
+                //get id and status of the row.
+                var ID = (int)dgvManageProjects.SelectedRows[0].Cells["id"].Value;
+                var status = (int)dgvManageProjects.SelectedRows[0].Cells["Status"].Value;
+
+
+                //then we need to query the database
+                var record = _db.ProjectRecords.FirstOrDefault(r => r.Status == status && r.id == ID);
+
+
+
+                //launch the form (closed or Active form) according to status code
+                if (record.Status == 1)
+                {
+                    var viewopenproject = new ViewOpenProject(record)
+                    {
+                        MdiParent = this.MdiParent
+                    };
+                    viewopenproject.Show();
+                }
+                if (record.Status == 2)
+                {
+                    var viewclosedproject = new ViewClosedProject(record)
+                    {
+                        MdiParent = this.MdiParent
+                    };
+                    viewclosedproject.Show();
+                }
+
             }
-            //if(record.Status == 2)
-            //{
-            // var viewclosedproject = new ViewClosedProject(record);
-            //}
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //get id and status of the row.
+            try
+            {
+                //get id and status of the row.
 
-            var ID = (int)dgvManageProjects.SelectedRows[0].Cells["id"].Value;
-
-
-            //then we need to query the database
-            var record = _db.ProjectRecords.FirstOrDefault(r => r.id == ID);
+                var ID = (int)dgvManageProjects.SelectedRows[0].Cells["id"].Value;
 
 
-            //delete record from the table
-            _db.ProjectRecords.Remove(record);
-            _db.SaveChanges();
+                //then we need to query the database
+                var record = _db.ProjectRecords.FirstOrDefault(r => r.id == ID);
 
 
-            dgvManageProjects.Refresh();
+                //delete record from the table
+                _db.ProjectRecords.Remove(record);
+                _db.SaveChanges();
+                MessageBox.Show("Deleted data successfully");
+
+
+                dgvManageProjects.Refresh();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshTable();
+        }
+
+        private void RefreshTable()
+        {
+            var records = _db.ProjectRecords
+            .Select(s => new
+            {
+                s.id,
+                s.ProjectTitle,
+                DateOfCreation = s.DateCreated,
+                s.Status
+            }).ToList();
+            dgvManageProjects.DataSource = records;
+
+            dgvManageProjects.Columns[0].Visible = false;
         }
     }
 }

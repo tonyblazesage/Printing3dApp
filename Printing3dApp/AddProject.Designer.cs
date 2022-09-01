@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.tbProjectTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.rtbComments = new System.Windows.Forms.RichTextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -124,13 +122,12 @@
             // 
             // dtpDateCreated
             // 
-            this.dtpDateCreated.Enabled = false;
             this.dtpDateCreated.Location = new System.Drawing.Point(304, 189);
-            this.dtpDateCreated.MinDate = new System.DateTime(2022, 8, 31, 13, 0, 26, 0);
+            this.dtpDateCreated.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dtpDateCreated.Name = "dtpDateCreated";
             this.dtpDateCreated.Size = new System.Drawing.Size(205, 20);
             this.dtpDateCreated.TabIndex = 9;
-            this.dtpDateCreated.Value = new System.DateTime(2022, 8, 31, 13, 0, 26, 0);
+            this.dtpDateCreated.Value = new System.DateTime(2022, 9, 1, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -218,11 +215,6 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // cbStatus
             // 
             this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -294,7 +286,6 @@
         private System.Windows.Forms.RichTextBox rtbComments;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Label label9;
     }

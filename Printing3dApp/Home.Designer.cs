@@ -72,6 +72,7 @@
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(80, 25);
             this.signOutToolStripMenuItem.Text = "Sign out";
+            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // Home
             // 

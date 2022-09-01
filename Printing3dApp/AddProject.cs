@@ -82,7 +82,7 @@ namespace Printing3dApp
                         ProjectTitle = projectTitle,
                         OwnerName = ownerName,
                         DateCreated = dateCreated,
-                        BuildHeight = (decimal?)buildHeight,
+                        BuildHeight = (double)buildHeight,
                         Material = (int)cbMaterial.SelectedValue,
                         Process = (int)cbProcess.SelectedValue,
                         Status = (int)cbStatus.SelectedValue,
@@ -113,13 +113,6 @@ namespace Printing3dApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //creating and setting the properties of datetimepicker
-
-            DateTimePicker dtp = new DateTimePicker();
-            dtp.Value = DateTime.Now;
-
-            this.Controls.Add(dtp);
-
             //select * from MaterialTypes
             var materials = _db.MaterialTypes.ToList();
             cbMaterial.DisplayMember = "Type";

@@ -33,6 +33,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnAddProject = new System.Windows.Forms.Button();
+            this.BtnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageProjects)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,12 +102,28 @@
             this.btnAddProject.UseVisualStyleBackColor = false;
             this.btnAddProject.Click += new System.EventHandler(this.btnAddProject_Click);
             // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnRefresh.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnRefresh.Location = new System.Drawing.Point(12, 75);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(93, 32);
+            this.BtnRefresh.TabIndex = 20;
+            this.BtnRefresh.Text = "Refresh";
+            this.BtnRefresh.UseVisualStyleBackColor = false;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            // 
             // ManageProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(481, 566);
+            this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.btnAddProject);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnDelete);
@@ -128,5 +145,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnAddProject;
+        private System.Windows.Forms.Button BtnRefresh;
     }
 }

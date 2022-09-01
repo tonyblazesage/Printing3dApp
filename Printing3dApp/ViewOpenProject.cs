@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Printing3dApp
@@ -44,23 +45,33 @@ namespace Printing3dApp
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            if (isEditMode)
+            try
             {
-                //edit implementation
-                var id = int.Parse(lbID.Text);
+                if (isEditMode)
+                {
+                    //edit implementation
+                    var id = int.Parse(lbID.Text);
 
 
-                var record = _db.ProjectRecords.FirstOrDefault(r => r.id == id);
-                record.Comments = rtbComments.Text;
-                record.ProjectTitle = tbProjectTitle.Text;
-                record.DateModified = dtpDateModified.Value;
-                record.OwnerName = tbOwnerName.Text;
-                record.BuildHeight = (decimal?)double.Parse(tbBuildHeight.Text);
+                    var record = _db.ProjectRecords.FirstOrDefault(r => r.id == id);
+                    record.Comments = rtbComments.Text;
+                    record.ProjectTitle = tbProjectTitle.Text;
+                    record.DateModified = dtpDateModified.Value;
+                    record.OwnerName = tbOwnerName.Text;
+                    record.BuildHeight = double.Parse(tbBuildHeight.Text);
 
 
-                _db.SaveChanges();
+                    _db.SaveChanges();
+
+                }
 
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
     }

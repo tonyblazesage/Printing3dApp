@@ -15,5 +15,10 @@ namespace Printing3dApp
             manageprojects.MdiParent = this;
             manageprojects.Show();
         }
+
+        private void signOutToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

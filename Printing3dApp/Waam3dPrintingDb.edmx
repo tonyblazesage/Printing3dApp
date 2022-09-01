@@ -24,10 +24,10 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProjectTitle" Type="nchar" MaxLength="50" />
-          <Property Name="OwnerName" Type="nchar" MaxLength="30" />
+          <Property Name="ProjectTitle" Type="nchar" MaxLength="100" />
+          <Property Name="OwnerName" Type="nchar" MaxLength="50" />
           <Property Name="DateCreated" Type="datetime" />
-          <Property Name="BuildHeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="BuildHeight" Type="float" />
           <Property Name="Comments" Type="nchar" MaxLength="100" />
           <Property Name="Material" Type="int" />
           <Property Name="Process" Type="int" />
@@ -138,10 +138,10 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProjectTitle" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="OwnerName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="ProjectTitle" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="OwnerName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="DateCreated" Type="DateTime" Precision="3" />
-          <Property Name="BuildHeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BuildHeight" Type="Double" />
           <Property Name="Comments" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="Material" Type="Int32" />
           <Property Name="Process" Type="Int32" />
@@ -195,7 +195,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
