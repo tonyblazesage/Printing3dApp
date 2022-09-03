@@ -34,6 +34,7 @@ namespace Printing3dApp
                     tbOwnerName.Text = record.OwnerName;
                     tbBuildHeight.Text = record.BuildHeight.ToString();
                     tbDateCreated.Text = record.DateCreated.ToString();
+                    tbDateModified.Text = record.DateModified.ToString();
                     tbStatus.Text = record.Status.ToString();
                     tbMaterial.Text = record.Material.ToString();
                     tbProcess.Text = record.Process.ToString();
