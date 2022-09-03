@@ -115,13 +115,21 @@ namespace Printing3dApp
                 //then we need to query the database
                 var record = _db.ProjectRecords.FirstOrDefault(r => r.id == ID);
 
+                DialogResult dr = MessageBox.Show("Are you sure yo want to delet?",
+                    "Delete", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 
-                //delete record from the table
-                _db.ProjectRecords.Remove(record);
-                _db.SaveChanges();
-                MessageBox.Show("Deleted data successfully");
+                if (dr == DialogResult.Yes)
+                {
+                    //delete record from the table
+                    _db.ProjectRecords.Remove(record);
+                    _db.SaveChanges();
+                    MessageBox.Show("Deleted data successfully");
 
-                PopulateDataGrid();
+                    PopulateDataGrid();
+
+                }
+
+                
                 
 
             }
