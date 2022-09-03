@@ -115,7 +115,7 @@ namespace Printing3dApp
                 //then we need to query the database
                 var record = _db.ProjectRecords.FirstOrDefault(r => r.id == ID);
 
-                DialogResult dr = MessageBox.Show("Are you sure yo want to delet?",
+                DialogResult dr = MessageBox.Show("Are you sure yo want to delete?",
                     "Delete", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 
                 if (dr == DialogResult.Yes)
