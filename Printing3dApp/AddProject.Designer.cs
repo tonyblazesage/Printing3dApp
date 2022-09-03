@@ -153,6 +153,10 @@
             // 
             this.cbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaterial.FormattingEnabled = true;
+            this.cbMaterial.Items.AddRange(new object[] {
+            "Aluminium, Grade 2024, Thickness 1.6mm.",
+            "Titanium, Grade 5055, Thickness 2mm.",
+            "Steel, Grade ER 60, Thickness 4mm."});
             this.cbMaterial.Location = new System.Drawing.Point(12, 282);
             this.cbMaterial.Name = "cbMaterial";
             this.cbMaterial.Size = new System.Drawing.Size(205, 21);
@@ -162,6 +166,9 @@
             // 
             this.cbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProcess.FormattingEnabled = true;
+            this.cbProcess.Items.AddRange(new object[] {
+            "Plasma.",
+            "MIG."});
             this.cbProcess.Location = new System.Drawing.Point(307, 282);
             this.cbProcess.Name = "cbProcess";
             this.cbProcess.Size = new System.Drawing.Size(205, 21);
@@ -239,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(527, 662);
+            this.ClientSize = new System.Drawing.Size(527, 675);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancel);

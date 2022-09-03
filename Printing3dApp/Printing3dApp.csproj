@@ -73,12 +73,6 @@
     <Compile Include="ManageProjects.Designer.cs">
       <DependentUpon>ManageProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterialType.cs">
-      <DependentUpon>Waam3dPrintingDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProcessType.cs">
-      <DependentUpon>Waam3dPrintingDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectRecord.cs">
       <DependentUpon>Waam3dPrintingDb.tt</DependentUpon>

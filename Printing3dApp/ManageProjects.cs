@@ -15,6 +15,21 @@ namespace Printing3dApp
 
         private void ManageProjects_Load(object sender, EventArgs e)
         {
+            try
+            {
+                PopulateDataGrid();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+
+        }
+
+        private void PopulateDataGrid()
+        {
             // var projects = _db.ProjectRecords.ToList();
 
             //using lamda expression to select the columns we need from the database
@@ -34,10 +49,6 @@ namespace Printing3dApp
             dgvManageProjects.Columns[0].Visible = false;
             dgvManageProjects.Columns[1].HeaderText = "Project Title";
             dgvManageProjects.Columns[2].HeaderText = "Date of Creation";
-
-
-
-
         }
 
         private void btnAddProject_Click(object sender, EventArgs e)
@@ -110,8 +121,8 @@ namespace Printing3dApp
                 _db.SaveChanges();
                 MessageBox.Show("Deleted data successfully");
 
-
-                dgvManageProjects.Refresh();
+                PopulateDataGrid();
+                
 
             }
             catch (Exception ex)

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\nener\source\repos\Printing3dApp\Printing3dApp\Waam3dPrintingDb.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\nener\source\repos\tonyblazesage\Printing3dApp\Printing3dApp\Waam3dPrintingDb.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

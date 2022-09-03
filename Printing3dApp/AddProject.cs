@@ -83,8 +83,8 @@ namespace Printing3dApp
                         OwnerName = ownerName,
                         DateCreated = dateCreated,
                         BuildHeight = (double)buildHeight,
-                        Material = (int)cbMaterial.SelectedValue,
-                        Process = (int)cbProcess.SelectedValue,
+                        Material = cbMaterial.Text,
+                        Process = cbProcess.Text,
                         Status = (int)cbStatus.SelectedValue,
                         Comments = comments
                     };
@@ -97,6 +97,8 @@ namespace Printing3dApp
                     MessageBox.Show($"Project: {projectTitle}\n\r" +
                     $"created by {ownerName}\n\r" +
                     $"is successful on {dateCreated}");
+
+                    Close();
 
                 }
 
@@ -114,10 +116,7 @@ namespace Printing3dApp
         private void Form1_Load(object sender, EventArgs e)
         {
             //select * from MaterialTypes
-            var materials = _db.MaterialTypes.ToList();
-            cbMaterial.DisplayMember = "Type";
-            cbMaterial.ValueMember = "id";
-            cbMaterial.DataSource = materials;
+            
 
             //select * from StatusStates
             var states = _db.StatusStates.ToList();
@@ -125,11 +124,7 @@ namespace Printing3dApp
             cbStatus.ValueMember = "id";
             cbStatus.DataSource = states;
 
-            //select * from ProcessTypes
-            var processes = _db.ProcessTypes.ToList();
-            cbProcess.DisplayMember = "Type";
-            cbProcess.ValueMember = "id";
-            cbProcess.DataSource = processes;
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

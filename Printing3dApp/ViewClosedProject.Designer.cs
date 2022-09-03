@@ -55,7 +55,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(320, 150);
+            this.label10.Location = new System.Drawing.Point(320, 136);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 17);
             this.label10.TabIndex = 53;
@@ -68,7 +68,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnClose.Location = new System.Drawing.Point(430, 635);
+            this.btnClose.Location = new System.Drawing.Point(231, 494);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(95, 40);
             this.btnClose.TabIndex = 52;
@@ -78,7 +78,7 @@
             // 
             // rtbComments
             // 
-            this.rtbComments.Location = new System.Drawing.Point(25, 483);
+            this.rtbComments.Location = new System.Drawing.Point(25, 351);
             this.rtbComments.Name = "rtbComments";
             this.rtbComments.ReadOnly = true;
             this.rtbComments.Size = new System.Drawing.Size(500, 137);
@@ -89,7 +89,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(28, 463);
+            this.label8.Location = new System.Drawing.Point(28, 331);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 17);
             this.label8.TabIndex = 50;
@@ -99,7 +99,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 219);
+            this.label5.Location = new System.Drawing.Point(28, 201);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 17);
             this.label5.TabIndex = 48;
@@ -109,7 +109,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 150);
+            this.label4.Location = new System.Drawing.Point(28, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 17);
             this.label4.TabIndex = 47;
@@ -117,7 +117,7 @@
             // 
             // tbBuildHeight
             // 
-            this.tbBuildHeight.Location = new System.Drawing.Point(28, 173);
+            this.tbBuildHeight.Location = new System.Drawing.Point(28, 156);
             this.tbBuildHeight.Name = "tbBuildHeight";
             this.tbBuildHeight.ReadOnly = true;
             this.tbBuildHeight.Size = new System.Drawing.Size(205, 20);
@@ -164,7 +164,7 @@
             // 
             // tbDateCreated
             // 
-            this.tbDateCreated.Location = new System.Drawing.Point(326, 173);
+            this.tbDateCreated.Location = new System.Drawing.Point(320, 156);
             this.tbDateCreated.Name = "tbDateCreated";
             this.tbDateCreated.ReadOnly = true;
             this.tbDateCreated.Size = new System.Drawing.Size(205, 20);
@@ -172,7 +172,7 @@
             // 
             // tbDateModified
             // 
-            this.tbDateModified.Location = new System.Drawing.Point(28, 251);
+            this.tbDateModified.Location = new System.Drawing.Point(28, 221);
             this.tbDateModified.Name = "tbDateModified";
             this.tbDateModified.ReadOnly = true;
             this.tbDateModified.Size = new System.Drawing.Size(205, 20);
@@ -182,7 +182,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 301);
+            this.label6.Location = new System.Drawing.Point(28, 263);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 56;
@@ -192,7 +192,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(320, 301);
+            this.label7.Location = new System.Drawing.Point(317, 201);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 57;
@@ -202,7 +202,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(28, 379);
+            this.label9.Location = new System.Drawing.Point(320, 263);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 17);
             this.label9.TabIndex = 58;
@@ -210,7 +210,7 @@
             // 
             // tbMaterial
             // 
-            this.tbMaterial.Location = new System.Drawing.Point(28, 333);
+            this.tbMaterial.Location = new System.Drawing.Point(28, 283);
             this.tbMaterial.Name = "tbMaterial";
             this.tbMaterial.ReadOnly = true;
             this.tbMaterial.Size = new System.Drawing.Size(205, 20);
@@ -218,7 +218,7 @@
             // 
             // tbProcess
             // 
-            this.tbProcess.Location = new System.Drawing.Point(320, 333);
+            this.tbProcess.Location = new System.Drawing.Point(320, 221);
             this.tbProcess.Name = "tbProcess";
             this.tbProcess.ReadOnly = true;
             this.tbProcess.Size = new System.Drawing.Size(205, 20);
@@ -226,7 +226,7 @@
             // 
             // tbStatus
             // 
-            this.tbStatus.Location = new System.Drawing.Point(28, 412);
+            this.tbStatus.Location = new System.Drawing.Point(320, 283);
             this.tbStatus.Name = "tbStatus";
             this.tbStatus.ReadOnly = true;
             this.tbStatus.Size = new System.Drawing.Size(205, 20);
@@ -254,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 699);
+            this.ClientSize = new System.Drawing.Size(543, 544);
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.tbProjectTitle);
             this.Controls.Add(this.tbStatus);

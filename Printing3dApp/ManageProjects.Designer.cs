@@ -34,6 +34,7 @@
             this.btnView = new System.Windows.Forms.Button();
             this.btnAddProject = new System.Windows.Forms.Button();
             this.BtnRefresh = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageProjects)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,12 +118,23 @@
             this.BtnRefresh.UseVisualStyleBackColor = false;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(22, 458);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(313, 23);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.Text = "Information: Status 1 = active and Status 2 = closed.";
+            // 
             // ManageProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(481, 566);
+            this.ClientSize = new System.Drawing.Size(481, 525);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.btnAddProject);
             this.Controls.Add(this.btnView);
@@ -146,5 +158,6 @@
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnAddProject;
         private System.Windows.Forms.Button BtnRefresh;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

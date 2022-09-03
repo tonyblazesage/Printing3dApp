@@ -25,8 +25,6 @@ namespace Printing3dApp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<MaterialType> MaterialTypes { get; set; }
-        public virtual DbSet<ProcessType> ProcessTypes { get; set; }
         public virtual DbSet<ProjectRecord> ProjectRecords { get; set; }
         public virtual DbSet<StatusState> StatusStates { get; set; }
     }

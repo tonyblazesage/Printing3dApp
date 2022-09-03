@@ -18,15 +18,13 @@ namespace Printing3dApp
         public string ProjectTitle { get; set; }
         public string OwnerName { get; set; }
         public Nullable<System.DateTime> DateCreated { get; set; }
+        public Nullable<System.DateTime> DateModified { get; set; }
         public Nullable<double> BuildHeight { get; set; }
         public string Comments { get; set; }
-        public Nullable<int> Material { get; set; }
-        public Nullable<int> Process { get; set; }
+        public string Material { get; set; }
+        public string Process { get; set; }
         public Nullable<int> Status { get; set; }
-        public Nullable<System.DateTime> DateModified { get; set; }
     
-        public virtual MaterialType MaterialType { get; set; }
-        public virtual ProcessType ProcessType { get; set; }
         public virtual StatusState StatusState { get; set; }
     }
 }
