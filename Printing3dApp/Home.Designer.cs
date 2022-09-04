@@ -44,20 +44,22 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(590, 257);
+            this.label1.Location = new System.Drawing.Point(651, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(301, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "Waam3d Printing";
+            this.label1.Visible = false;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectToolStripMenuItem,
             this.signOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(143, 701);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +67,7 @@
             // 
             this.projectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(137, 25);
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(130, 25);
             this.projectToolStripMenuItem.Text = "Manage Projects";
             this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
             // 
@@ -74,7 +76,7 @@
             this.signOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.signOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(80, 25);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(130, 25);
             this.signOutToolStripMenuItem.Text = "Sign out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
@@ -82,18 +84,19 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(534, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(585, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(414, 222);
+            this.pictureBox1.Size = new System.Drawing.Size(444, 117);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 679);
+            this.textBox1.Location = new System.Drawing.Point(146, 679);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1284, 20);
+            this.textBox1.Size = new System.Drawing.Size(1138, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "@copyright Waam3d printing";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

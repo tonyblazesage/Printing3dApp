@@ -225,6 +225,7 @@
             // cbStatus
             // 
             this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.Enabled = false;
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Location = new System.Drawing.Point(12, 353);
             this.cbStatus.Name = "cbStatus";
