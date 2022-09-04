@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="abab049d81054a9894418ee2cc8cf75a" Name="Diagram1">
+      <Diagram DiagramId="d46c6bacd6054cf48d3b85e880bec033" Name="Diagram1">
         <EntityTypeShape EntityType="Waam3dPrintingModel.ProjectRecord" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="Waam3dPrintingModel.StatusState" Width="1.5" PointX="0.75" PointY="1.75" />
         <AssociationConnector Association="Waam3dPrintingModel.FK_ProjectRecord_StatusState" />

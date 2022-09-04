@@ -84,7 +84,7 @@ namespace Printing3dApp
                         DateCreated = dateCreated,
                         BuildHeight = (double)buildHeight,
                         Material = cbMaterial.Text,
-                        Process = cbProcess.Text,
+                        Process = cbMaterial.Text,
                         Status = (int)cbStatus.SelectedValue,
                         Comments = comments
                     };
